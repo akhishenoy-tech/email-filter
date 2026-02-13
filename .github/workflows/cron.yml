@@ -1,0 +1,16 @@
+name: Email Filter Cron
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Run every 5 minutes (GitHub limitation for free plans)
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Poll Vercel Endpoint
+        continue-on-error: true
+        run: |
+          # Replace with your actual Vercel project URL
+          curl -X GET "https://email-filter-theta.vercel.app/api/watcher/poll"
