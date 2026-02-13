@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+data/tokens.json
+data/processed.json
+*.log
+logs/
+.DS_Store
